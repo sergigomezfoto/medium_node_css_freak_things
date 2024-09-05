@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS and NODE research</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" rel="preload" href="shadow_image.css">
+
+<body>
+
+    <div id="wrapper">
+        <div id="pixel-wrapper">
+            <div class="shadow-image"></div>
+        </div>
+        <a href="https://npmrunbuild.com" target="_blank">by: npmrunbuild.com </a>
+
+        <button id="downloadBtn" class="downloadBtn">Download CSS File</button>
+
+    </div>
+
+</body>
+
+<script>
+    window.onload = () => {
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = 'shadow_image.css';
+            a.download = 'shadow_image.css';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+    };
+</script>
+
+</html>
